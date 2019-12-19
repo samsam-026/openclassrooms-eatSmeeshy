@@ -1,13 +1,53 @@
+@font-face {
+  font-family: 'Chocolate Drink';
+  src: local('Chocolate Drink'), url(./assets/fonts/Chocolate_Drink.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./assets/fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.navbar {
+  background-color: #EC368D;
+}
+
+.navbar-brand img {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.navbar-brand, .footer-logo {
+  font-family: 'Chocolate Drink';
+}
+
+.navbar-brand {
+  font-size: 2rem !important;
+}
+
+.footer-logo {
+  font-size: 5em;
+}
+
+.footer-logo img {
+  width: 30%;
+  height: auto;
+}
+
+.footer {
+  background-color: #282c34;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
