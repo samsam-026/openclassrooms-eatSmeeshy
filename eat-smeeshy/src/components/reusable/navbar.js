@@ -7,7 +7,7 @@ import logo from '../../assets/images/logo.svg';
 
 function TopNavBar() {
     return (
-        <Navbar variant="dark" fixed="sticky">
+        <Navbar variant="dark" fixed="top">
             <Navbar.Brand href="#home">
                 <img
                     alt=""

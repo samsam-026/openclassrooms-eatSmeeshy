@@ -1,10 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './logo.svg';
 import './App.css';
-import TopNavBar from './components/reusable/navbar';
-import Footer from './components/reusable/footer';
-import Home from './components/pages/home';
+import TopNavBar from './components/reusable/Navbar';
+import Footer from './components/reusable/Footer';
+import Home from './pages/Home';
 
 function App() {
   return (

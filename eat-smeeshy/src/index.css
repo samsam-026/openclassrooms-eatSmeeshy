@@ -3,16 +3,16 @@
   src: local('Chocolate Drink'), url(./assets/fonts/Chocolate_Drink.ttf) format('truetype');
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: local('Montserrat'), url(./assets/fonts/Montserrat-Regular.ttf) format('truetype');
-}
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fdeaf3 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600 !important;
 }
 
 code {
@@ -20,7 +20,8 @@ code {
 }
 
 .navbar {
-  background-color: #EC368D;
+  background-color: #9C0D38;
+  padding: 0.25rem 1rem !important;
 }
 
 .navbar-brand img {
@@ -50,4 +51,82 @@ code {
   color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.price {
+  color: #1B998B;
+}
+
+#restaurantList {
+  height: 90vh;
+  overflow-y: auto;
+  margin: 0.5em 0;
+  padding-bottom: 0.5em;
+}
+
+.rest-list-item {
+  margin-bottom: 0.5em;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.rest-list-item .img-div {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rest-list-item .rate-price {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0;
+  right: 0;
+}
+
+.rest-list-item .media-body {
+  position: relative;
+  padding: 0.75em;
+  height: 150px;
+}
+
+.rest-list-item .media-body .row {
+  margin: 0;
+}
+
+.rest-list-item .media-body p {
+  font-size: 0.8em;
+}
+
+.rating {
+  color: #9C0D38;
+}
+
+/* width */
+
+#restaurantList::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+
+#restaurantList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+/* Handle */
+
+#restaurantList::-webkit-scrollbar-thumb {
+  background: #aaaaaa;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+
+#restaurantList::-webkit-scrollbar-thumb:hover {
+  background: #9C0D38;
 }
