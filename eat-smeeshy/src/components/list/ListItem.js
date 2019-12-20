@@ -33,10 +33,10 @@ class ListItem extends React.Component {
                     <h5>{name}</h5>
                     <p className="text-muted">{address}</p>
                     <Row className="rate-price">
-                        <Col xs={6} sm={6} md={6} className="rating">
+                        <Col xs={8} sm={6} md={6} className="rating">
                             {this.displayRating(rating)}
                         </Col>
-                        <Col xs={6} sm={6} md={6} className="price text-right">
+                        <Col xs={4} sm={6} md={6} className="price text-right">
                             {this.displayPrice(price_level)}
                         </Col>
                     </Row>

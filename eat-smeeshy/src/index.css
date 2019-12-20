@@ -19,6 +19,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* NAVBAR STYLE */
+
 .navbar {
   background-color: #9C0D38;
   padding: 0.25rem 1rem !important;
@@ -37,6 +39,17 @@ code {
   font-size: 2rem !important;
 }
 
+.navbar-dark .navbar-text {
+  color: rgba(255, 255, 255, .75) !important;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: white !important;
+  color: white !important;
+}
+
+/* FOOTER STYLE */
+
 .footer-logo {
   font-size: 5em;
 }
@@ -53,9 +66,18 @@ code {
   padding-bottom: 1rem;
 }
 
-.price {
-  color: #1B998B;
+/* FORM CONTROL STYLE */
+
+.navbar .navbar-collapse .form-inline .form-control {
+  border-color: transparent;
 }
+
+.form-control:focus {
+  border-color: #1B998B !important;
+  box-shadow: 0 0 0 0.2rem rgba(27, 153, 139, 0.25) !important;
+}
+
+/* LIST ITEM STYLE */
 
 #restaurantList {
   height: 90vh;
@@ -74,7 +96,7 @@ code {
 
 .rest-list-item .img-div {
   width: 150px;
-  height: 150px;
+  min-height: 150px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -90,7 +112,7 @@ code {
 .rest-list-item .media-body {
   position: relative;
   padding: 0.75em;
-  height: 150px;
+  min-height: 150px;
 }
 
 .rest-list-item .media-body .row {
@@ -105,28 +127,76 @@ code {
   color: #9C0D38;
 }
 
-/* width */
+.price {
+  color: #1B998B;
+}
+
+@media only screen and (max-width: 600px) {
+  .rating, .price {
+    font-size: 0.8em;
+  }
+  .rating {
+    padding: 0 !important;
+    padding-left: 10px !important;
+  }
+  .price {
+    padding: 0 !important;
+    padding-right: 10px !important;
+  }
+}
+
+/* SCROLL BAR STYLE */
 
 #restaurantList::-webkit-scrollbar {
   width: 5px;
 }
-
-/* Track */
 
 #restaurantList::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 15px;
 }
 
-/* Handle */
-
 #restaurantList::-webkit-scrollbar-thumb {
   background: #aaaaaa;
   border-radius: 15px;
 }
 
-/* Handle on hover */
-
 #restaurantList::-webkit-scrollbar-thumb:hover {
   background: #9C0D38;
+}
+
+/* TAB STYLE */
+
+#bottomTabs.nav-tabs .nav-item {
+  width: 50%;
+}
+
+#bottomTabs .nav-item .btn {
+  border-radius: 0px !important;
+  width: 100%;
+  padding: 0.5em;
+  background-color: #9C0D38;
+  color: white;
+}
+
+#bottomTabs .nav-item .btn.active {
+  background-color: #EC368D;
+}
+
+#bottomTabs {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+#bottomTabs .nav-item .btn.focus, #bottomTabs .nav-item .btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(236, 54, 141, .25);
+}
+
+@media (min-width: 768px) {
+  .tab-content>.tab-pane {
+    display: block !important;
+  }
 }

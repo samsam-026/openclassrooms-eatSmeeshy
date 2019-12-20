@@ -1,44 +1,13 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 import MapContainer from '../components/map/Map';
 import ListItem from '../components/list/ListItem';
 
 class Home extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            allRest: [],
-            userPos: {}
-        };
-    }
-
-    componentDidMount() {
-        this.setRestaurants();
-        this.setUserLocation();
-    }
-
-    setRestaurants() {
-        fetch("http://localhost:5000/restaurants/")
-            .then(response => response.json())
-            .then(restaurantList => {
-                this.setState({ allRest: restaurantList });
-            }).catch(error => console.error(error));
-    }
-
-    setUserLocation() {
-        navigator.geolocation.getCurrentPosition(currPos => {
-            this.setState({ userPos: { lat: currPos.coords.latitude, lng: currPos.coords.longitude } });
-        }, (error) => {
-            console.error(error);
-        }, { timeout: 20000 });
-    }
-
     displayList() {
-        return this.state.allRest.map((rest, index) => {
+        return this.props.allRest.map((rest, index) => {
             return (<ListItem restaurant={rest} key={index} />)
         })
     }
@@ -46,16 +15,25 @@ class Home extends React.Component {
     render() {
         return (
             <Container style={{ paddingTop: 65 }} fluid>
-                <Row>
-                    <Col md={7} style={{ paddingLeft: 0 }}>
-                        <MapContainer restaurants={this.state.allRest} userPos={this.state.userPos} />
-                    </Col>
-                    <Col md={5}>
+                <div className="tab-content row">
+                    <div role="tabpanel" className="tab-pane active col-md-6 col-lg-7" style={{ paddingLeft: 0 }} id="mapTab">
+                        <MapContainer restaurants={this.props.allRest} userPos={this.props.userPos} />
+                    </div>
+                    <div role="tabpanel" className="tab-pane col-md-6 col-lg-5" id="restTab">
                         <ul id="restaurantList" className="list-unstyled text-left">
                             {this.displayList()}
                         </ul>
-                    </Col>
-                </Row>
+                    </div>
+                </div>
+
+                <ul data-role="navbar" className="nav nav-tabs d-md-none" id="bottomTabs" role="tablist">
+                    <li className="nav-item">
+                        <a className="btn active" href="#mapTab" aria-controls="mapTab" data-toggle="tab">Map</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="btn" href="#restTab" aria-controls="restTab" data-toggle="tab">List</a>
+                    </li>
+                </ul>
             </Container>
         )
     }
