@@ -14,7 +14,19 @@
         "image": "https://media.timeout.com/images/102535166/630/472/image.jpg",
         "place_id": "ChIJNQpoJj1Z4joRgoxhgFBd5Ns",
         "price_level": 3,
-        "rating": 3.5
+        "rating": 3.5,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "2 Alfred House Rd, Colombo 00300, Sri Lanka",
@@ -31,7 +43,19 @@
         "image": "http://www.paradiseroad.lk/wp-content/uploads/2015/09/gallery-cafe-1.jpg",
         "place_id": "ChIJCbyzLGBZ4joRdPY4QTkZdGc",
         "price_level": 3,
-        "rating": 1
+        "rating": 1,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "82 Srimath Anagarika Dharmapala Mawatha, Colombo 03 00300, Sri Lanka",
@@ -48,7 +72,19 @@
         "image": "https://centurion-magazine.com/media/10035/indian-ocean-sri-lanka-underneath-the-mango-tree-restaurant-dining-room.jpg?quality=75&width=768&height=408&mode=crop",
         "place_id": "ChIJU1VVFUJZ4joRyqBl_9RLntY",
         "price_level": 3,
-        "rating": 3.1
+        "rating": 3.1,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "200 Union Pl, Colombo 00200, Sri Lanka",
@@ -65,7 +101,19 @@
         "image": "http://www.flow.lk/wp-content/uploads/2017/03/Main-section-A.jpg",
         "place_id": "ChIJ5UWRwRRZ4joRmm2f_-Y6pdo",
         "price_level": 3,
-        "rating": 4
+        "rating": 4,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "65/B Srimath R.G.Senanayake Mawatha, Colombo 00700, Sri Lanka",
@@ -82,7 +130,19 @@
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/12/b7/ea/66/dining-room.jpg",
         "place_id": "ChIJe_3Z93dZ4joRQujJCIwJ62k",
         "price_level": 3,
-        "rating": 2
+        "rating": 2,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "328 A2, Colombo 00300, Sri Lanka",
@@ -99,7 +159,19 @@
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/0b/37/57/c2/palmyrah-restaurant.jpg",
         "place_id": "ChIJZ3JXNF1Z4joRj8Nqt2d9Vpc",
         "price_level": 3,
-        "rating": 3
+        "rating": 3,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "11 Galle Face Terrace, Colombo 00300, Sri Lanka",
@@ -116,7 +188,19 @@
         "image": "http://nihonbashi.lk/assets/media/home/home_layout1/images/image5.jpg",
         "place_id": "ChIJT_jTWj9Z4joRLVW9vvEoyL0",
         "price_level": 4,
-        "rating": 4.3
+        "rating": 4.3,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "Colombo 02, 2 Parsons Rd, 00200, Sri Lanka",
@@ -133,7 +217,39 @@
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/17/32/cf/59/graze-kitchen.jpg",
         "place_id": "ChIJG_8-9SRZ4joRnptaVKEVYDA",
         "price_level": 4,
-        "rating": 4.6
+        "rating": 4.6,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            },
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            },
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "Crescat Boulevard, Lobby -L1, Galle Rd, Colombo 00300, Sri Lanka",
@@ -150,7 +266,19 @@
         "image": "https://www.yamu.lk/uploads/files/2015/07/yimg_Jns0WE-640x480.jpg",
         "place_id": "ChIJKTLM5kBZ4joRZMwS98yD0r4",
         "price_level": 3,
-        "rating": 2.3
+        "rating": 2.3,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "32 Walukarama Rd, Colombo 00300, Sri Lanka",
@@ -167,7 +295,19 @@
         "image": "https://www.yamu.lk/uploads/files/2014/12/yimg_6ZmCvJ-640x425.jpg",
         "place_id": "ChIJq_Y8W2dZ4joRLSYEIiK9VZ0",
         "price_level": 3,
-        "rating": 4
+        "rating": 4,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "Taj Samudra, 25 Galle Face Center Rd, 80500, Sri Lanka",
@@ -184,7 +324,19 @@
         "image": "https://www.yamu.lk/uploads/files/2015/02/yimg_Uaqybb-640x453.jpg",
         "place_id": "ChIJG1ZCzD5Z4joRROl4hMl5qSI",
         "price_level": 4,
-        "rating": 4.5
+        "rating": 4.5,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "5 Skelton Rd, Colombo 50000, Sri Lanka",
@@ -201,7 +353,19 @@
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/10/00/30/a5/the-cosy-lounge.jpg",
         "place_id": "ChIJk51iWMVb4joRqgVlzIihARo",
         "price_level": 2,
-        "rating": 2.5
+        "rating": 2.5,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "77 A2, Colombo 00300, Sri Lanka",
@@ -218,7 +382,19 @@
         "image": "https://cinnamonweb.blob.core.windows.net/cinnamonweb-prd/dining_wellness/the-lagoon-grand-530X420.jpg",
         "place_id": "ChIJB5a-hF1Z4joRCPgj2vPUn4A",
         "price_level": 3,
-        "rating": 4
+        "rating": 4,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "3 Srimath Anagarika Dharmapala Mawatha, Colombo 00300, Sri Lanka",
@@ -235,7 +411,19 @@
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/10/ed/5d/3e/robata-grill-and-lounge.jpg",
         "place_id": "ChIJa0MHXkJZ4joR4eyudiGSGr8",
         "price_level": 3,
-        "rating": 3.2
+        "rating": 3.2,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "292 Nawala Rd, Sri Jayawardenepura Kotte 10107, Sri Lanka",
@@ -252,7 +440,19 @@
         "image": "https://www.airbnb.com/google_place_photo?photoreference=CmRaAAAA2C0wehw7RtpVFQ-89XlYxQr4k5ytGIeSe7GpxY14KQGOvnZ96ZWOk4GIu8wwl9ifcWcdRvqLbt20nvTPrtu6_K_vKRN3MUzgl9ATIdYX1CmEMUQsrODUad5n_dgUZm9TEhCryQUJ1701exrorGvfluQpGhRlsibjkZzAhHiQNu8bX4vNSlwghw&maxwidth=800&maxheight=800&place_id=160571",
         "place_id": "ChIJvUMcGSVa4joRAH3BE2XmnG8",
         "price_level": 2,
-        "rating": 2.3
+        "rating": 2.3,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "615A Nawala Rd, Sri Jayawardenepura Kotte 10100, Sri Lanka",
@@ -269,7 +469,19 @@
         "image": "http://static.life.dailymirror.lk/media/images/image_31240099d1.jpg",
         "place_id": "ChIJBczujoxZ4joR17tJmQafgbc",
         "price_level": 2,
-        "rating": 3.3
+        "rating": 3.3,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "528 Nawala Rd, Sri Jayawardenepura Kotte, Sri Lanka",
@@ -286,7 +498,19 @@
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/05/0a/3f/ad/fab.jpg",
         "place_id": "ChIJJyq4dYtZ4joRtobHYqBp0BU",
         "price_level": 2,
-        "rating": 1.9
+        "rating": 1.9,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "Weli Park, Urban Wetland Park, Nawala Rd, Sri Jayawardenepura Kotte, Sri Lanka",
@@ -303,7 +527,19 @@
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/b2/29/fc/garton-s-ark.jpg",
         "place_id": "ChIJMQAenj5a4joRfAR8Yw3shiI",
         "price_level": 2,
-        "rating": 4.2
+        "rating": 4.2,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "B470, Sri Jayawardenepura Kotte 00500, Sri Lanka",
@@ -320,7 +556,19 @@
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/15/da/9d/90/pizza-hut.jpg",
         "place_id": "ChIJNSLhwTpa4joRkHFy4-SJ9yU",
         "price_level": 2,
-        "rating": 3.7
+        "rating": 3.7,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "178/A Etul Kotte-Mirihana-Kohuwela Rd, Nugegoda, Sri Lanka",
@@ -337,7 +585,19 @@
         "image": "https://www.yamu.lk/uploads/files/2015/04/yimg_vF5mLF-640x426.jpg",
         "place_id": "ChIJwTc6RWpa4joRaGehizJ-Z_k",
         "price_level": 2,
-        "rating": 2.3
+        "rating": 2.3,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     },
     {
         "address": "295 Kotte Rd, Sri Jayawardenepura Kotte, Sri Lanka",
@@ -354,6 +614,18 @@
         "image": "http://www.pulse.lk/wp-content/uploads/2019/11/int2-8.jpg",
         "place_id": "ChIJKQJYFmta4joRnlFLcRivI-8",
         "price_level": 2,
-        "rating": 1.2
+        "rating": 1.2,
+        "reviews": [
+            {
+                "stars": 5,
+                "name": "Sam",
+                "comment": "Amazing!"
+            },
+            {
+                "stars": 3,
+                "name": "Max",
+                "comment": "Meh, it was fine."
+            }
+        ]
     }
 ]

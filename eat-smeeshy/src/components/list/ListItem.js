@@ -21,13 +21,16 @@ class ListItem extends React.Component {
                     // else, current star should be empty
                     : <FontAwesomeIcon key={i} icon={['far', 'star']} size="lg" />
         );
+    }
 
+    handleClick = () => {
+        this.props.onRestClick(this.props.restaurant.place_id);
     }
 
     render() {
         let { name, address, image, price_level, rating } = this.props.restaurant;
         return (
-            <Media as="li" className="rest-list-item">
+            <Media as="li" className="rest-list-item clickable" onClick={this.handleClick} >
                 <div className="img-div" style={{ backgroundImage: `url(${image})` }} />
                 <Media.Body>
                     <h5>{name}</h5>

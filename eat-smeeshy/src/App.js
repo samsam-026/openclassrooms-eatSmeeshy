@@ -4,6 +4,7 @@ import './App.css';
 import TopNavBar from './components/reusable/Navbar';
 import Footer from './components/reusable/Footer';
 import Home from './pages/Home';
+import Restaurant from './components/restaurant/Restaurant';
 
 class App extends React.Component {
 
@@ -13,6 +14,9 @@ class App extends React.Component {
       allRest: [],
       filteredRest: [],
       userPos: {},
+      expandedRest: {
+        review: []
+      },
       rateFilterValue: 0,
       priceFilterValue: 4
     };
@@ -40,26 +44,33 @@ class App extends React.Component {
   }
 
   changePrice(priceVal) {
-    console.log("priceVal", priceVal);
     this.setState({ priceFilterValue: priceVal }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
   }
 
   changeRate(rateVal) {
-    console.log("rateVal", rateVal);
     this.setState({ rateFilterValue: rateVal }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
   }
 
   filterRestaurants(priceVal, rateVal) {
-
     let filteredList = this.state.allRest.filter(rest => rest.price_level <= priceVal && rest.rating >= rateVal);
     this.setState({ filteredRest: filteredList });
+  }
+
+  selectRestaurant(place_id) {
+    let expandedRest = this.state.allRest.find(rest => rest.place_id === place_id);
+    this.setState({ expandedRest })
+  }
+
+  clearRestSelection() {
+    this.setState({ expandedRest: { reviews: [] } });
   }
 
   render() {
     return (
       <div className="App">
+        <Restaurant expandedRest={this.state.expandedRest} onSelectClear={this.clearRestSelection.bind(this)} />
         <TopNavBar onPriceChange={this.changePrice.bind(this)} onRateChange={this.changeRate.bind(this)} />
-        <Home userPos={this.state.userPos} allRest={this.state.filteredRest} />
+        <Home userPos={this.state.userPos} allRest={this.state.filteredRest} onRestSelect={this.selectRestaurant.bind(this)} />
         <Footer />
       </div>
     );

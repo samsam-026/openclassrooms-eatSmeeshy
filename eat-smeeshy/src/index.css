@@ -54,6 +54,10 @@ code {
   font-size: 5em;
 }
 
+.footer-logo h1 {
+  font-weight: 300 !important;
+}
+
 .footer-logo img {
   width: 30%;
   height: auto;
@@ -131,37 +135,47 @@ code {
   color: #1B998B;
 }
 
+.clickable {
+  cursor: pointer !important;
+}
+
 @media only screen and (max-width: 600px) {
   .rating, .price {
     font-size: 0.8em;
   }
-  .rating {
+  .rest-list-item .rating {
     padding: 0 !important;
     padding-left: 10px !important;
   }
-  .price {
+  .rest-list-item .price {
     padding: 0 !important;
     padding-right: 10px !important;
+  }
+  #restDetails #ratingDiv {
+    padding-right: 0;
+  }
+  #restDetails #priceDiv {
+    padding-left: 0;
   }
 }
 
 /* SCROLL BAR STYLE */
 
-#restaurantList::-webkit-scrollbar {
+#restaurantList::-webkit-scrollbar, #restScrollDetails::-webkit-scrollbar {
   width: 5px;
 }
 
-#restaurantList::-webkit-scrollbar-track {
+#restaurantList::-webkit-scrollbar-track, #restScrollDetails::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 15px;
 }
 
-#restaurantList::-webkit-scrollbar-thumb {
+#restaurantList::-webkit-scrollbar-thumb, #restScrollDetails::-webkit-scrollbar-thumb {
   background: #aaaaaa;
   border-radius: 15px;
 }
 
-#restaurantList::-webkit-scrollbar-thumb:hover {
+#restaurantList::-webkit-scrollbar-thumb:hover, #restScrollDetails::-webkit-scrollbar-thumb:hover {
   background: #9C0D38;
 }
 
@@ -198,5 +212,82 @@ code {
 @media (min-width: 768px) {
   .tab-content>.tab-pane {
     display: block !important;
+  }
+}
+
+/* RESTAURANT DETAIL CONTAINER */
+
+#restDetails {
+  width: 59%;
+  position: fixed;
+  top: 0;
+  left: -59%;
+  height: 100vh;
+  z-index: 1040;
+  background: white;
+  transition: all 0.3s;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  padding: 1.5em;
+}
+
+#restScrollDetails {
+  height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#restDetails.active {
+  left: 0;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1035;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+#reviewRow, #imageRow {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.reviewRating {
+  color: #EC368D
+}
+
+.review-list-item {
+  padding: 0 !important;
+}
+
+.review-list-item p {
+  margin-bottom: 0.5rem;
+}
+
+#restDetails .btn.btn-outline-primary {
+  color: #EC368D;
+  border-color: #EC368D;
+  border-width: 2px;
+  font-weight: 600;
+}
+
+#restDetails .btn.btn-outline-primary:hover {
+  background-color: #EC368D;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  #restDetails {
+    width: 100%;
+    left: 100%;
   }
 }

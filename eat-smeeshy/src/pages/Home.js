@@ -8,7 +8,7 @@ class Home extends React.Component {
 
     displayList() {
         return this.props.allRest.map((rest, index) => {
-            return (<ListItem restaurant={rest} key={index} />)
+            return (<ListItem restaurant={rest} key={index} onRestClick={this.props.onRestSelect}/>)
         })
     }
 

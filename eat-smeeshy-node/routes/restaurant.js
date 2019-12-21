@@ -5,7 +5,7 @@ const databaseLocations = require("../utils/databaseLocation");
 
 router.get("/", function (req, res, next) {
     let restaurants = fileHandler.getJsonFile(databaseLocations.restaurant);
-    let restList = restaurants.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0).map(({ reviews, ...restaurant }) => restaurant);
+    let restList = restaurants.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
     res.send(restList);
 });
 
