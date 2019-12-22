@@ -28,13 +28,13 @@ class ListItem extends React.Component {
     }
 
     render() {
-        let { name, address, image, price_level, rating } = this.props.restaurant;
+        let { name, formatted_address, image, price_level, rating } = this.props.restaurant;
         return (
             <Media as="li" className="rest-list-item clickable" onClick={this.handleClick} >
                 <div className="img-div" style={{ backgroundImage: `url(${image})` }} />
                 <Media.Body>
                     <h5>{name}</h5>
-                    <p className="text-muted">{address}</p>
+                    <p className="text-muted">{formatted_address}</p>
                     <Row className="rate-price">
                         <Col xs={8} sm={6} md={6} className="rating">
                             {this.displayRating(rating)}

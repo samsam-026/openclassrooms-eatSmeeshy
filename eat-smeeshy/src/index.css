@@ -294,3 +294,50 @@ code {
     left: 100%;
   }
 }
+
+/* RATING MODAL STYLE */
+
+.star-rating {
+  color: #1B998B;
+}
+
+.modal-footer, .modal-header {
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+.modal-header .close {
+  font-size: 2em;
+  color: #9C0D38 !important;
+}
+
+.modal-header .close:hover {
+  color: #9C0D38 !important;
+  opacity: 1 !important;
+}
+
+#reviewModal .form-label {
+  text-align: right !important;
+}
+
+@media (max-width: 767px) {
+  #reviewModal .form-label {
+    text-align: left !important;
+  }
+}
+
+/* BUTTON STYLE */
+
+.btn.btn-primary, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary.focus, .btn-primary:focus {
+  background-color: #9C0D38;
+  border-color: #9C0D38;
+}
+
+.btn.btn-primary:hover {
+  background-color: #EC368D;
+  border-color: #EC368D;
+}
+
+.btn-primary.focus, .btn-primary:focus, .btn-outline-primary.focus, .btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(236, 54, 141, .25) !important;
+}

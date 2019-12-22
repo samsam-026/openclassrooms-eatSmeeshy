@@ -6,7 +6,7 @@ class MapContainer extends React.Component {
     displayMarkers = () => {
         return this.props.restaurants.map((rest, index) => {
             return <Marker
-                key={index} id={index} position={rest.location}
+                key={index} id={index} position={rest.geometry.location}
                 name={rest.name}
                 title={rest.name}
                 icon={require("../../assets/images/marker-sm.png")}
@@ -32,7 +32,7 @@ class MapContainer extends React.Component {
                     />
 
                     {this.displayMarkers()}
-                    
+
                 </Map> :
                     <h1 className="display-2" style={{ margin: "auto" }}>Loading...</h1>
                 }

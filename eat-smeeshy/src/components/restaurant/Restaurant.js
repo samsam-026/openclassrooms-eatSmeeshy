@@ -35,16 +35,20 @@ class Restaurant extends React.Component {
         this.props.onSelectClear();
     }
 
+    handleAddReview = () => {
+        this.props.onAddReview();
+    }
+
     render() {
         let activeClass = this.props.expandedRest && this.props.expandedRest.name ? "active" : "";
-        let { name, address, price_level, rating } = this.props.expandedRest;
+        let { name, formatted_address, price_level, rating } = this.props.expandedRest;
         return (
             <>
                 <Container id="restDetails" className={"text-left " + activeClass}>
                     <Row style={{ marginBottom: "1.5em" }}>
                         <Col xs={8} md={10}>
                             <h1>{name}</h1>
-                            <p className="text-muted">{address}</p>
+                            <p className="text-muted">{formatted_address}</p>
                             <Row>
                                 <Col xs={6} id="ratingDiv">
                                     <h4 className="rating">{this.displayRating(rating)}</h4>
@@ -57,7 +61,7 @@ class Restaurant extends React.Component {
                         <Col xs={4} md={2} className="text-right">
                             <FontAwesomeIcon onClick={this.handleClear} size={"4x"} icon={["fas", "angle-left"]} color="#9C0D38" className="d-none d-md-inline-block clickable" />
                             <FontAwesomeIcon onClick={this.handleClear} size={"3x"} icon={["fas", "angle-right"]} color="#9C0D38" className="d-inline-block d-md-none clickable" />
-                            <Button variant="outline-primary">Write Review</Button>
+                            <Button variant="outline-primary" onClick={this.handleAddReview}>Write Review</Button>
                         </Col>
                     </Row>
                     <div id="restScrollDetails">
@@ -73,7 +77,7 @@ class Restaurant extends React.Component {
                         </Row>
                     </div>
                 </Container>
-                <div className={"overlay " + activeClass} />
+                <div className={"overlay " + activeClass} onClick={this.handleClear} />
             </>
         )
     }

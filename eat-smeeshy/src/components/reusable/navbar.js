@@ -18,7 +18,7 @@ class TopNavBar extends React.Component {
     render() {
         return (
             <Navbar collapseOnSelect expand="lg" variant="dark" fixed="top">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand>
                     <img
                         alt=""
                         src={logo}
