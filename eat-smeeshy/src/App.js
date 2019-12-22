@@ -6,6 +6,7 @@ import Footer from './components/reusable/Footer';
 import Home from './pages/Home';
 import Restaurant from './components/restaurant/Restaurant';
 import ReviewModal from './components/modal/ReviewModal';
+import RestaurantModal from './components/modal/RestaurantModal';
 
 class App extends React.Component {
 
@@ -18,9 +19,11 @@ class App extends React.Component {
       expandedRest: {
         review: []
       },
+      newRestLocation: {},
       rateFilterValue: 0,
       priceFilterValue: 4,
-      showReviewModal: false
+      showReviewModal: false,
+      showRestModal: false
     };
   }
 
@@ -60,11 +63,22 @@ class App extends React.Component {
 
   selectRestaurant(place_id) {
     let expandedRest = this.state.allRest.find(rest => rest.place_id === place_id);
-    this.setState({ expandedRest })
+    this.setState({ expandedRest });
   }
 
   clearRestSelection() {
     this.setState({ expandedRest: { reviews: [] } });
+  }
+
+  clickMap(newRestLocation) {
+
+    let { allRest } = this.state;
+    let restIndex = allRest.findIndex(rest => rest.geometry.location.lat === newRestLocation.lat && rest.geometry.location.lng === newRestLocation.lng);
+    if (restIndex === -1) {
+      this.setState({ newRestLocation }, () => this.showRestModal());
+    } else {
+      alert("A restaurant already exists in this place");
+    }
   }
 
   showReviewModal() {
@@ -75,10 +89,18 @@ class App extends React.Component {
     this.setState({ showReviewModal: false });
   }
 
-  addReview(placeId, name, comment, stars) {
+  showRestModal() {
+    this.setState({ showRestModal: true });
+  }
+
+  hideRestModal() {
+    this.setState({ showRestModal: false, newRestLocation: {} });
+  }
+
+  addReview(location, name, comment, stars) {
     let { allRest } = this.state;
 
-    let placeIndex = allRest.findIndex(rest => rest.place_id === placeId);
+    let placeIndex = allRest.findIndex(rest => rest.geometry.location.lat === location.lat && rest.geometry.location.lng === location.lng);
 
     if (placeIndex > -1) {
       allRest[placeIndex].reviews.push({ stars, name, comment });
@@ -86,13 +108,22 @@ class App extends React.Component {
     }
   }
 
+  addRestaurant(name, formatted_address, price_level) {
+    let { allRest, newRestLocation } = this.state;
+
+    let newRestaurant = { name, formatted_address, price_level, rating: 1, image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", geometry: { location: { ...newRestLocation } }, reviews: [] }
+    allRest.push(newRestaurant);
+    this.setState({ allRest, expandedRest: newRestaurant });
+  }
+
   render() {
     return (
       <div className="App">
         <Restaurant expandedRest={this.state.expandedRest} onSelectClear={this.clearRestSelection.bind(this)} onAddReview={this.showReviewModal.bind(this)} />
         <TopNavBar onPriceChange={this.changePrice.bind(this)} onRateChange={this.changeRate.bind(this)} />
-        <Home userPos={this.state.userPos} allRest={this.state.filteredRest} onRestSelect={this.selectRestaurant.bind(this)} />
+        <Home userPos={this.state.userPos} allRest={this.state.filteredRest} onRestSelect={this.selectRestaurant.bind(this)} onMapClick={this.clickMap.bind(this)} />
         <ReviewModal show={this.state.showReviewModal} onReviewClose={this.hideReviewModal.bind(this)} onReviewSubmit={this.addReview.bind(this)} restaurant={this.state.expandedRest} />
+        <RestaurantModal show={this.state.showRestModal} onRestClose={this.hideRestModal.bind(this)} onRestSubmit={this.addRestaurant.bind(this)} />
         <Footer />
       </div>
     );

@@ -15,11 +15,18 @@ class MapContainer extends React.Component {
         });
     }
 
+    mapClicked(clickEvent) {
+        let lat = clickEvent.latLng.lat();
+        let lng = clickEvent.latLng.lng();
+        this.props.onMapClick({ lat, lng });
+    }
+
     render() {
         return (
             <div style={{ height: '90vh', width: '100%', textAlign: "center" }}>
                 {this.props.userPos ? <Map
                     google={this.props.google}
+                    onClick={(mapProps, map, clickEvent) => this.mapClicked(clickEvent)}
                     zoom={13}
                     initialCenter={this.props.userPos}
                 >

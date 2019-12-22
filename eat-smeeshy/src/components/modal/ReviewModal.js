@@ -28,7 +28,7 @@ class ReviewModal extends React.Component {
 
         let reviewerName = form.elements.reviewerName.value;
         let comments = form.elements.comments.value;
-        this.props.onReviewSubmit(this.props.restaurant.place_id, reviewerName, comments, this.state.stars);
+        this.props.onReviewSubmit(this.props.restaurant.geometry.location, reviewerName, comments, this.state.stars);
 
         e.preventDefault();
         this.handleClose();
@@ -43,26 +43,26 @@ class ReviewModal extends React.Component {
                 <Form onSubmit={this.handleSubmit}>
                     <Modal.Body>
                         <Form.Group as={Row} controlId="reviewerName">
-                            <Form.Label column sm={2} className="text-right" >Name</Form.Label>
+                            <Form.Label column sm={2}>Name</Form.Label>
                             <Col sm={10}>
                                 <Form.Control type="text" placeholder="John" required autoFocus={true} />
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row}>
-                            <Form.Label column sm={2} className="text-right" >Rating</Form.Label>
+                            <Form.Label column sm={2}>Rating</Form.Label>
                             <Col sm={10}>
                                 <StarRating rating={this.state.stars} onRateChange={this.changeRating.bind(this)} />
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} controlId="comments">
-                            <Form.Label column sm={2} className="text-right" >Comments</Form.Label>
+                            <Form.Label column sm={2}>Comments</Form.Label>
                             <Col sm={10}>
                                 <Form.Control as="textarea" rows="3" required />
                             </Col>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" type="submit">Submit</Button>
+                        <Button variant="primary" type="submit">Add review</Button>
                     </Modal.Footer>
                 </Form>
             </Modal>

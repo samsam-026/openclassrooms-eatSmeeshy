@@ -6,9 +6,13 @@ import ListItem from '../components/list/ListItem';
 
 class Home extends React.Component {
 
+    handleMapClick(newLocation) {
+        this.props.onMapClick(newLocation);
+    }
+
     displayList() {
         return this.props.allRest.map((rest, index) => {
-            return (<ListItem restaurant={rest} key={index} onRestClick={this.props.onRestSelect}/>)
+            return (<ListItem restaurant={rest} key={index} onRestClick={this.props.onRestSelect} />)
         })
     }
 
@@ -17,7 +21,7 @@ class Home extends React.Component {
             <Container style={{ paddingTop: 65 }} fluid>
                 <div className="tab-content row">
                     <div role="tabpanel" className="tab-pane active col-md-6 col-lg-7" style={{ paddingLeft: 0 }} id="mapTab">
-                        <MapContainer restaurants={this.props.allRest} userPos={this.props.userPos} />
+                        <MapContainer restaurants={this.props.allRest} userPos={this.props.userPos} onMapClick={this.handleMapClick.bind(this)} />
                     </div>
                     <div role="tabpanel" className="tab-pane col-md-6 col-lg-5" id="restTab">
                         <ul id="restaurantList" className="list-unstyled text-left">
