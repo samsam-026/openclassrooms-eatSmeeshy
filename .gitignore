@@ -2,6 +2,7 @@
 
 # dependencies
 /eat-smeeshy/node_modules
+/eat-smeeshy/src/env.js
 /eat-smeeshy-node/node_modules
 /eat-smeeshy/.pnp
 .pnp.js

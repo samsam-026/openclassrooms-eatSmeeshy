@@ -316,12 +316,12 @@ code {
   opacity: 1 !important;
 }
 
-#reviewModal .form-label {
+#reviewModal .form-label, #restaurantModal .form-label {
   text-align: right !important;
 }
 
 @media (max-width: 767px) {
-  #reviewModal .form-label {
+  #reviewModal .form-label, #restaurantModal .form-label {
     text-align: left !important;
   }
 }
@@ -334,10 +334,12 @@ code {
 }
 
 .btn.btn-primary:hover {
-  background-color: #EC368D;
-  border-color: #EC368D;
+  background-color: #EC368D !important;
+  border-color: #EC368D !important;
 }
 
 .btn-primary.focus, .btn-primary:focus, .btn-outline-primary.focus, .btn-outline-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(236, 54, 141, .25) !important;
+  background-color: #9C0D38 !important;
+  border-color: #9C0D38 !important;
 }
