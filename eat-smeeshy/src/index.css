@@ -288,6 +288,10 @@ code {
   color: white;
 }
 
+#imageRow {
+  overflow-x: auto;
+}
+
 @media (max-width: 767px) {
   #restDetails {
     width: 100%;

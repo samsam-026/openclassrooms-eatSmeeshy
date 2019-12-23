@@ -17,7 +17,10 @@ class App extends React.Component {
       filteredRest: [],
       userPos: {},
       expandedRest: {
-        review: []
+        review: [],
+        geometry: {
+          location: {}
+        }
       },
       newRestLocation: {},
       rateFilterValue: 0,
@@ -28,12 +31,17 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setRestaurants();
     this.setUserLocation();
   }
 
-  setRestaurants() {
-    fetch("http://localhost:5000/restaurants/")
+  setRestaurants({ lat, lng }) {
+    fetch("http://localhost:5000/restaurants/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ lat, lng })
+    })
       .then(response => response.json())
       .then(restaurantList => {
         this.setState({ allRest: restaurantList, filteredRest: restaurantList });
@@ -42,7 +50,7 @@ class App extends React.Component {
 
   setUserLocation() {
     navigator.geolocation.getCurrentPosition(currPos => {
-      this.setState({ userPos: { lat: currPos.coords.latitude, lng: currPos.coords.longitude } });
+      this.setState({ userPos: { lat: currPos.coords.latitude, lng: currPos.coords.longitude } }, () => this.setRestaurants(this.state.userPos));
     }, (error) => {
       console.error(error);
     }, { timeout: 20000 });
@@ -67,7 +75,14 @@ class App extends React.Component {
   }
 
   clearRestSelection() {
-    this.setState({ expandedRest: { reviews: [] } });
+    this.setState({
+      expandedRest: {
+        reviews: [],
+        geometry: {
+          location: {}
+        }
+      }
+    });
   }
 
   clickMap(newRestLocation) {
@@ -79,6 +94,10 @@ class App extends React.Component {
     } else {
       alert("A restaurant already exists in this place");
     }
+  }
+
+  moveMap(userPos) {
+    this.setState({ userPos }, () => this.setRestaurants(userPos))
   }
 
   showReviewModal() {
@@ -121,7 +140,7 @@ class App extends React.Component {
       <div className="App">
         <Restaurant expandedRest={this.state.expandedRest} onSelectClear={this.clearRestSelection.bind(this)} onAddReview={this.showReviewModal.bind(this)} />
         <TopNavBar onPriceChange={this.changePrice.bind(this)} onRateChange={this.changeRate.bind(this)} />
-        <Home userPos={this.state.userPos} allRest={this.state.filteredRest} onRestSelect={this.selectRestaurant.bind(this)} onMapClick={this.clickMap.bind(this)} />
+        <Home userPos={this.state.userPos} allRest={this.state.filteredRest} onRestSelect={this.selectRestaurant.bind(this)} onMapClick={this.clickMap.bind(this)} onMapMove={this.moveMap.bind(this)} />
         <ReviewModal show={this.state.showReviewModal} onReviewClose={this.hideReviewModal.bind(this)} onReviewSubmit={this.addReview.bind(this)} restaurant={this.state.expandedRest} />
         <RestaurantModal show={this.state.showRestModal} onRestClose={this.hideRestModal.bind(this)} onRestSubmit={this.addRestaurant.bind(this)} />
         <Footer />

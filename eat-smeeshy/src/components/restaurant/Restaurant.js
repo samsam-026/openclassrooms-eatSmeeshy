@@ -7,6 +7,8 @@ import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReviewItem from '../list/ReviewItem';
 
+import env from '../../env';
+
 class Restaurant extends React.Component {
 
     displayPrice(price) {
@@ -41,7 +43,10 @@ class Restaurant extends React.Component {
 
     render() {
         let activeClass = this.props.expandedRest && this.props.expandedRest.name ? "active" : "";
-        let { name, formatted_address, price_level, rating } = this.props.expandedRest;
+        let { name, formatted_address, price_level, rating, geometry } = this.props.expandedRest;
+
+        let streetviewImage = "https://maps.googleapis.com/maps/api/streetview?size=700x250&location=" + geometry.location.lat + "," + geometry.location.lng + "&key=" + env.googleApi;
+        // + "&signature=YOUR_SIGNATURE"
         return (
             <>
                 <Container id="restDetails" className={"text-left " + activeClass}>
@@ -65,9 +70,15 @@ class Restaurant extends React.Component {
                         </Col>
                     </Row>
                     <div id="restScrollDetails">
-                        {/* <Row id="imageRow"></Row> */}
+                        <Row id="imageRow">
+                            <Col className="text-center">
+                                <img src={streetviewImage} alt={name + " Street View"} />
+                            </Col>
+                        </Row>
+                        <hr />
                         <Row id="reviewRow">
                             <Col>
+                                <h3>Reviews</h3>
                                 {this.props.expandedRest && this.props.expandedRest.reviews ?
                                     <ul id="reviewList" className="list-unstyled text-left">
                                         {this.displayList()}
