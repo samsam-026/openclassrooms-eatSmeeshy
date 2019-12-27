@@ -36,7 +36,7 @@ class ListItem extends React.Component {
                 <div className="img-div" style={{ backgroundImage: `url(${imageURL})` }} />
                 <Media.Body>
                     <h5>{name}</h5>
-                    <p className="text-muted">{formatted_address}</p>
+                    <p className="text-muted">{formatted_address ? formatted_address : "Sri Lanka"}</p>
                     <Row className="rate-price">
                         <Col xs={8} sm={6} md={6} className="rating">
                             {rating && rating > 0 && rating <= 5 ? this.displayRating(rating) : this.displayRating(1)}

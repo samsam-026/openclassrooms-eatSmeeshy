@@ -35,6 +35,7 @@ class App extends React.Component {
   }
 
   setRestaurants({ lat, lng }) {
+    let { allRest } = this.state;
     fetch("http://localhost:5000/restaurants/", {
       method: "POST",
       headers: {
@@ -44,7 +45,17 @@ class App extends React.Component {
     })
       .then(response => response.json())
       .then(restaurantList => {
-        this.setState({ allRest: restaurantList, filteredRest: restaurantList });
+
+        restaurantList.forEach(rest => {
+          if (allRest.findIndex(restau => restau.place_id === rest.place_id) === -1) {
+            allRest.push(rest);
+          }
+        });
+
+        let newRestList = allRest.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
+
+        this.setState({ allRest: newRestList, filteredRest: newRestList });
+        // this.setState({ allRest: restaurantList, filteredRest: restaurantList });
       }).catch(error => console.error(error));
   }
 

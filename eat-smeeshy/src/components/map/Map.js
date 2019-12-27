@@ -12,6 +12,7 @@ class MapContainer extends React.Component {
                 title={rest.name}
                 icon={require("../../assets/images/marker-sm.png")}
                 style={{ width: 40, height: 40 }}
+                onClick={()=> this.handleMarkerClick(rest.place_id)}
             />
         });
     }
@@ -26,6 +27,10 @@ class MapContainer extends React.Component {
         let lat = map.center.lat();
         let lng = map.center.lng();
         this.props.onMapMove({ lat, lng });
+    }
+
+    handleMarkerClick = (place_id) => {
+        this.props.onMarkerClick(place_id);
     }
 
     render() {
