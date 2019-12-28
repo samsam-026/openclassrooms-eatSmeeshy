@@ -138,12 +138,24 @@ class App extends React.Component {
     }
   }
 
-  addRestaurant(name, formatted_address, price_level) {
+  addRestaurant(name, price_level) {
     let { allRest, newRestLocation } = this.state;
+    let { lat, lng } = newRestLocation;
 
-    let newRestaurant = { name, formatted_address, price_level, rating: 1, image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", geometry: { location: { ...newRestLocation } }, reviews: [] }
-    allRest.push(newRestaurant);
-    this.setState({ allRest, expandedRest: newRestaurant });
+    fetch("http://localhost:5000/restaurants/address", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ lat, lng })
+    })
+      .then(response => response.json())
+      .then(restaurantData => {
+
+        let newRestaurant = { name, formatted_address: restaurantData.formatted_address, price_level, place_id: restaurantData.place_id, rating: 1, image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", geometry: { location: { ...newRestLocation } }, reviews: [] }
+        allRest.push(newRestaurant);
+        this.setState({ allRest, expandedRest: newRestaurant });
+      }).catch(error => console.error(error));
   }
 
   render() {

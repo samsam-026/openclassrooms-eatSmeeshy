@@ -26,10 +26,9 @@ class RestaurantModal extends React.Component {
         let form = e.currentTarget;
 
         let restName = form.elements.restName.value;
-        let address = form.elements.address.value;
         let priceRange = form.elements.priceRange.value;
 
-        this.props.onRestSubmit(restName, address, parseInt(priceRange));
+        this.props.onRestSubmit(restName, parseInt(priceRange));
 
         e.preventDefault();
         this.handleClose();
@@ -58,12 +57,6 @@ class RestaurantModal extends React.Component {
                                     <option value={3}>$$$</option>
                                     <option value={4}>$$$$</option>
                                 </Form.Control>
-                            </Col>
-                        </Form.Group>
-                        <Form.Group as={Row} controlId="address">
-                            <Form.Label column sm={2}>Address</Form.Label>
-                            <Col sm={10}>
-                                <Form.Control as="textarea" rows="3" required />
                             </Col>
                         </Form.Group>
                     </Modal.Body>

@@ -29,4 +29,16 @@ router.post("/", function (req, res, next) {
         .catch(error => console.error(error));
 });
 
+router.post("/address", function (req, res, next) {
+    let { lat, lng } = req.body;
+
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&key=" + env.googleApi)
+        .then(function (placesData) {
+            let placesObj = placesData.data.results[0];
+            let { formatted_address, place_id } = placesObj;
+            res.send({ formatted_address, place_id });
+        })
+        .catch(error => console.error(error));
+});
+
 module.exports = router;
