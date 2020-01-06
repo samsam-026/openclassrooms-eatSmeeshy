@@ -24,14 +24,17 @@ class ReviewModal extends React.Component {
     }
 
     handleSubmit = (e) => {
+
+        e.preventDefault();
         let form = e.currentTarget;
 
         let reviewerName = form.elements.reviewerName.value;
         let comments = form.elements.comments.value;
+
         this.props.onReviewSubmit(this.props.restaurant.geometry.location, reviewerName, comments, this.state.stars);
 
-        e.preventDefault();
-        this.handleClose();
+        this.setState({ stars: 1 }, () => this.handleClose())
+
     }
 
     render() {

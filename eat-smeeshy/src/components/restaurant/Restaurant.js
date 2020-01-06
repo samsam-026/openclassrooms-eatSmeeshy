@@ -43,10 +43,9 @@ class Restaurant extends React.Component {
 
     render() {
         let activeClass = this.props.expandedRest && this.props.expandedRest.name ? "active" : "";
-        let { name, formatted_address, price_level, rating, geometry } = this.props.expandedRest;
+        let { name, formatted_address, price_level, rating, geometry, reviews } = this.props.expandedRest;
 
         let streetviewImage = "https://maps.googleapis.com/maps/api/streetview?size=700x250&location=" + geometry.location.lat + "," + geometry.location.lng + "&key=" + env.googleApi;
-        // + "&signature=YOUR_SIGNATURE"
         return (
             <>
                 <Container id="restDetails" className={"text-left " + activeClass}>
@@ -79,7 +78,7 @@ class Restaurant extends React.Component {
                         <Row id="reviewRow">
                             <Col>
                                 <h3>Reviews</h3>
-                                {this.props.expandedRest && this.props.expandedRest.reviews ?
+                                {reviews && reviews.length > 0 ?
                                     <ul id="reviewList" className="list-unstyled text-left">
                                         {this.displayList()}
                                     </ul> :

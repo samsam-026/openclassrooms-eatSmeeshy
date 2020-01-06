@@ -23,14 +23,14 @@ class RestaurantModal extends React.Component {
     }
 
     handleSubmit = (e) => {
+
+        e.preventDefault();
         let form = e.currentTarget;
 
         let restName = form.elements.restName.value;
         let priceRange = form.elements.priceRange.value;
 
         this.props.onRestSubmit(restName, parseInt(priceRange));
-
-        e.preventDefault();
         this.handleClose();
     }
 

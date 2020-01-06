@@ -41,4 +41,14 @@ router.post("/address", function (req, res, next) {
         .catch(error => console.error(error));
 });
 
+router.get("/reviews/:id", function (req, res, next) {
+    let place_id = req.params.id;
+    axios.get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id + "&fields=review&key=" + env.googleApi)
+        .then(function (placesData) {
+            let reviewList = placesData.data.result.reviews;
+            res.send({ reviewList });
+        })
+        .catch(error => console.error(error));
+});
+
 module.exports = router;

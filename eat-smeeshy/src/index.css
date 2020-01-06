@@ -272,6 +272,10 @@ code {
   padding: 0 !important;
 }
 
+.review-list-item h5 {
+  text-transform: capitalize;
+}
+
 .review-list-item p {
   margin-bottom: 0.5rem;
 }
@@ -342,7 +346,11 @@ code {
   border-color: #EC368D !important;
 }
 
-.btn-primary.focus, .btn-primary:focus, .btn-outline-primary.focus, .btn-outline-primary:focus {
+.btn-outline-primary.focus, .btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(236, 54, 141, .25) !important;
+}
+
+.btn-primary.focus, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(236, 54, 141, .25) !important;
   background-color: #9C0D38 !important;
   border-color: #9C0D38 !important;

@@ -20,24 +20,24 @@ class ReviewItem extends React.Component {
     }
 
     render() {
-        let { name, comment, stars } = this.props.review;
+        let { author_name, text, rating } = this.props.review;
         return (
             <Container className="review-list-item">
                 <Row>
                     <Col xs={6}>
                         <h5>
-                            {name}
+                            {author_name}
                         </h5>
                     </Col>
                     <Col xs={6} className="text-right">
                         <h6 className="reviewRating">
-                            {this.displayRating(stars)}
+                            {this.displayRating(rating)}
                         </h6>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <p>{comment}</p>
+                        <p>{text}</p>
                     </Col>
                 </Row>
                 <hr />

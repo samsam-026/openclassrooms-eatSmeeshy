@@ -21,14 +21,14 @@
         "rating": 3.5,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -54,14 +54,14 @@
         "rating": 1,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -87,14 +87,14 @@
         "rating": 3.1,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -120,14 +120,14 @@
         "rating": 4,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -153,14 +153,14 @@
         "rating": 2,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -186,14 +186,14 @@
         "rating": 3,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -219,14 +219,14 @@
         "rating": 4.3,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -252,34 +252,34 @@
         "rating": 4.6,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             },
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             },
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -305,14 +305,14 @@
         "rating": 2.3,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -338,14 +338,14 @@
         "rating": 4,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -371,14 +371,14 @@
         "rating": 4.5,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -404,14 +404,14 @@
         "rating": 2.5,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -437,14 +437,14 @@
         "rating": 4,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -470,14 +470,14 @@
         "rating": 3.2,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -503,14 +503,14 @@
         "rating": 2.3,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -536,14 +536,14 @@
         "rating": 3.3,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -569,14 +569,14 @@
         "rating": 1.9,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -602,14 +602,14 @@
         "rating": 4.2,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -635,14 +635,14 @@
         "rating": 3.7,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -668,14 +668,14 @@
         "rating": 2.3,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     },
@@ -701,14 +701,14 @@
         "rating": 1.2,
         "reviews": [
             {
-                "stars": 5,
-                "name": "Sam",
-                "comment": "Amazing!"
+                "rating": 5,
+                "author_name": "Sam",
+                "text": "Amazing!"
             },
             {
-                "stars": 3,
-                "name": "Max",
-                "comment": "Meh, it was fine."
+                "rating": 3,
+                "author_name": "Max",
+                "text": "Meh, it was fine."
             }
         ]
     }

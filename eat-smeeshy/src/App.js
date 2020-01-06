@@ -53,9 +53,8 @@ class App extends React.Component {
         });
 
         let newRestList = allRest.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
-
-        this.setState({ allRest: newRestList, filteredRest: newRestList });
-        // this.setState({ allRest: restaurantList, filteredRest: restaurantList });
+        this.setState({ allRest: newRestList, filteredRest: newRestList }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
+        // this.setState({ allRest: restaurantList, filteredRest: restaurantList }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
       }).catch(error => console.error(error));
   }
 
@@ -82,7 +81,17 @@ class App extends React.Component {
 
   selectRestaurant(place_id) {
     let expandedRest = this.state.allRest.find(rest => rest.place_id === place_id);
-    this.setState({ expandedRest });
+
+    fetch("http://localhost:5000/restaurants/reviews/" + expandedRest.place_id)
+      .then(response => response.json())
+      .then(reviews => {
+
+        if (!expandedRest.reviews) {
+          expandedRest.reviews = reviews.reviewList
+        }
+
+        this.setState({ expandedRest });
+      }).catch(error => console.error(error));
   }
 
   clearRestSelection() {
@@ -97,7 +106,6 @@ class App extends React.Component {
   }
 
   clickMap(newRestLocation) {
-
     let { allRest } = this.state;
     let restIndex = allRest.findIndex(rest => rest.geometry.location.lat === newRestLocation.lat && rest.geometry.location.lng === newRestLocation.lng);
     if (restIndex === -1) {
@@ -127,13 +135,13 @@ class App extends React.Component {
     this.setState({ showRestModal: false, newRestLocation: {} });
   }
 
-  addReview(location, name, comment, stars) {
+  addReview(location, author_name, text, rating) {
     let { allRest } = this.state;
 
     let placeIndex = allRest.findIndex(rest => rest.geometry.location.lat === location.lat && rest.geometry.location.lng === location.lng);
 
     if (placeIndex > -1) {
-      allRest[placeIndex].reviews.push({ stars, name, comment });
+      allRest[placeIndex].reviews.push({ rating, author_name, text });
       this.setState({ allRest, expandedRest: allRest[placeIndex] });
     }
   }
