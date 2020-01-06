@@ -27,6 +27,7 @@ class App extends React.Component {
       newRestLocation: {},
       rateFilterValue: 0,
       priceFilterValue: 4,
+      bounds: { latBounds: {}, lngBounds: {} },
       showReviewModal: false,
       showRestModal: false
     };
@@ -55,7 +56,7 @@ class App extends React.Component {
         });
 
         let newRestList = allRest.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
-        this.setState({ allRest: newRestList, filteredRest: newRestList }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
+        this.setState({ allRest: newRestList, filteredRest: newRestList }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue, this.state.bounds));
       }).catch(error => console.error(error));
   }
 
@@ -67,16 +68,25 @@ class App extends React.Component {
     }, { timeout: 20000 });
   }
 
-  changePrice(priceVal) {
-    this.setState({ priceFilterValue: priceVal }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
+  changePrice(priceFilterValue) {
+    this.setState({ priceFilterValue }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue, this.state.bounds));
   }
 
-  changeRate(rateVal) {
-    this.setState({ rateFilterValue: rateVal }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
+  changeRate(rateFilterValue) {
+    this.setState({ rateFilterValue }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue, this.state.bounds));
   }
 
-  filterRestaurants(priceVal, rateVal) {
-    let filteredList = this.state.allRest.filter(rest => rest.price_level <= priceVal && rest.rating >= rateVal);
+  changeBounds(bounds) {
+    this.setState({ bounds }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue, this.state.bounds))
+  }
+
+  filterRestaurants(priceVal, rateVal, mapBounds) {
+    let filteredList = this.state.allRest.filter(rest => {
+      return rest.price_level <= priceVal &&
+        rest.rating >= rateVal &&
+        (rest.geometry.location.lat >= mapBounds.latBounds.lower && rest.geometry.location.lat <= mapBounds.latBounds.upper) &&
+        (rest.geometry.location.lng >= mapBounds.lngBounds.lower && rest.geometry.location.lng <= mapBounds.lngBounds.upper)
+    });
     this.setState({ filteredRest: filteredList });
   }
 
@@ -172,7 +182,7 @@ class App extends React.Component {
       <div className="App">
         <Restaurant expandedRest={this.state.expandedRest} onSelectClear={this.clearRestSelection.bind(this)} onAddReview={this.showReviewModal.bind(this)} />
         <TopNavBar onPriceChange={this.changePrice.bind(this)} onRateChange={this.changeRate.bind(this)} />
-        <Home userPos={this.state.userPos} allRest={this.state.filteredRest} onRestSelect={this.selectRestaurant.bind(this)} onMapClick={this.clickMap.bind(this)} onMapMove={this.moveMap.bind(this)} />
+        <Home userPos={this.state.userPos} allRest={this.state.filteredRest} onRestSelect={this.selectRestaurant.bind(this)} onMapClick={this.clickMap.bind(this)} onMapMove={this.moveMap.bind(this)} onMapBoundChange={this.changeBounds.bind(this)} />
         <ReviewModal show={this.state.showReviewModal} onReviewClose={this.hideReviewModal.bind(this)} onReviewSubmit={this.addReview.bind(this)} restaurant={this.state.expandedRest} />
         <RestaurantModal show={this.state.showRestModal} onRestClose={this.hideRestModal.bind(this)} onRestSubmit={this.addRestaurant.bind(this)} />
         <Footer />

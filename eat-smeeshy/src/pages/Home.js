@@ -9,8 +9,13 @@ class Home extends React.Component {
     handleMapClick(newLocation) {
         this.props.onMapClick(newLocation);
     }
+
     handleMapMove(newLocation) {
         this.props.onMapMove(newLocation);
+    }
+
+    handleMapBoundChange(newBounds) {
+        this.props.onMapBoundChange(newBounds);
     }
 
     displayList() {
@@ -24,7 +29,7 @@ class Home extends React.Component {
             <Container style={{ paddingTop: 65 }} fluid>
                 <div className="tab-content row">
                     <div role="tabpanel" className="tab-pane active col-md-6 col-lg-7" style={{ paddingLeft: 0 }} id="mapTab">
-                        <MapContainer restaurants={this.props.allRest} userPos={this.props.userPos} onMapClick={this.handleMapClick.bind(this)} onMapMove={this.handleMapMove.bind(this)} onMarkerClick={this.props.onRestSelect}/>
+                        <MapContainer restaurants={this.props.allRest} userPos={this.props.userPos} onMapClick={this.handleMapClick.bind(this)} onMapMove={this.handleMapMove.bind(this)} onMarkerClick={this.props.onRestSelect} onMapBoundChange={this.handleMapBoundChange.bind(this)} />
                     </div>
                     <div role="tabpanel" className="tab-pane col-md-6 col-lg-5" id="restTab">
                         <ul id="restaurantList" className="list-unstyled text-left">

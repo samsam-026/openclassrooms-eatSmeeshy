@@ -12,7 +12,7 @@ class MapContainer extends React.Component {
                 title={rest.name}
                 icon={require("../../assets/images/marker-sm.png")}
                 style={{ width: 40, height: 40 }}
-                onClick={()=> this.handleMarkerClick(rest.place_id)}
+                onClick={() => this.handleMarkerClick(rest.place_id)}
             />
         });
     }
@@ -23,10 +23,26 @@ class MapContainer extends React.Component {
         this.props.onMapClick({ lat, lng });
     }
 
-    centerMoved(map) {
+    centerMoved(mapProps, map) {
         let lat = map.center.lat();
         let lng = map.center.lng();
         this.props.onMapMove({ lat, lng });
+    }
+
+    boundChanged(mapProps, map) {
+        let bounds = map.getBounds();
+        if (bounds) {
+            this.props.onMapBoundChange({
+                latBounds: {
+                    lower: bounds.pa.g,
+                    upper: bounds.pa.h
+                },
+                lngBounds: {
+                    lower: bounds.ka.g,
+                    upper: bounds.ka.h
+                }
+            });
+        }
     }
 
     handleMarkerClick = (place_id) => {
@@ -39,7 +55,8 @@ class MapContainer extends React.Component {
                 {this.props.userPos ? <Map
                     google={this.props.google}
                     onClick={(mapProps, map, clickEvent) => this.mapClicked(clickEvent)}
-                    onDragend={(mapProps, map) => this.centerMoved(map)}
+                    onDragend={this.centerMoved.bind(this)}
+                    onBounds_changed={this.boundChanged.bind(this)}
                     zoom={15}
                     initialCenter={this.props.userPos}
                 >
