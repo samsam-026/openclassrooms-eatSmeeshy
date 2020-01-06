@@ -8,12 +8,14 @@ import Restaurant from './components/restaurant/Restaurant';
 import ReviewModal from './components/modal/ReviewModal';
 import RestaurantModal from './components/modal/RestaurantModal';
 
+import initRestList from './initRestList';
+
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      allRest: [],
+      allRest: initRestList,
       filteredRest: [],
       userPos: {},
       expandedRest: {
@@ -54,7 +56,6 @@ class App extends React.Component {
 
         let newRestList = allRest.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
         this.setState({ allRest: newRestList, filteredRest: newRestList }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
-        // this.setState({ allRest: restaurantList, filteredRest: restaurantList }, () => this.filterRestaurants(this.state.priceFilterValue, this.state.rateFilterValue));
       }).catch(error => console.error(error));
   }
 

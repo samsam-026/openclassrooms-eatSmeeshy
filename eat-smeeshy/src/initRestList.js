@@ -1,4 +1,4 @@
-[
+const initRestList = [
     {
         "formatted_address": "117 Colombo - Batticaloa Hwy, Colombo, Sri Lanka",
         "geometry": {
@@ -692,3 +692,5 @@
         ]
     }
 ]
+
+export default initRestList;
