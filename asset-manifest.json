@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/eat-smeeshy/static/css/main.02120d45.chunk.css",
+    "main.js": "/eat-smeeshy/static/js/main.5aaec2d0.chunk.js",
+    "main.js.map": "/eat-smeeshy/static/js/main.5aaec2d0.chunk.js.map",
+    "runtime-main.js": "/eat-smeeshy/static/js/runtime-main.00d8c7fe.js",
+    "runtime-main.js.map": "/eat-smeeshy/static/js/runtime-main.00d8c7fe.js.map",
+    "static/css/2.de424728.chunk.css": "/eat-smeeshy/static/css/2.de424728.chunk.css",
+    "static/js/2.887ad5f6.chunk.js": "/eat-smeeshy/static/js/2.887ad5f6.chunk.js",
+    "static/js/2.887ad5f6.chunk.js.map": "/eat-smeeshy/static/js/2.887ad5f6.chunk.js.map",
+    "index.html": "/eat-smeeshy/index.html",
+    "precache-manifest.7db834fd215a4907fd2f0c2976eb29c1.js": "/eat-smeeshy/precache-manifest.7db834fd215a4907fd2f0c2976eb29c1.js",
+    "service-worker.js": "/eat-smeeshy/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/eat-smeeshy/static/css/2.de424728.chunk.css.map",
+    "static/css/main.02120d45.chunk.css.map": "/eat-smeeshy/static/css/main.02120d45.chunk.css.map",
+    "static/js/2.887ad5f6.chunk.js.LICENSE.txt": "/eat-smeeshy/static/js/2.887ad5f6.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/eat-smeeshy/static/media/Chocolate_Drink.50f756e8.ttf",
+    "static/media/logo.svg": "/eat-smeeshy/static/media/logo.ba267f89.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.00d8c7fe.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.887ad5f6.chunk.js",
+    "static/css/main.02120d45.chunk.css",
+    "static/js/main.5aaec2d0.chunk.js"
+  ]
+}
